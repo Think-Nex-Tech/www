@@ -39,6 +39,15 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 | `npm run start` | Serve the production build       |
 | `npm run lint`  | Run ESLint                       |
 
+## Deployment (GitHub Pages)
+
+The site is built as a static export (`output: "export"`) and deployed by the workflow in `.github/workflows/deploy.yml` on every push to `main`.
+
+1. In the repository, go to **Settings → Pages** and set **Source** to **GitHub Actions**.
+2. Push to `main`. The site is published at `https://<org>.github.io/<repo-name>/`.
+
+The workflow sets `NEXT_PUBLIC_BASE_PATH` to `/<repo-name>`. For a custom domain or a root `<org>.github.io` repo, remove that env var from the workflow.
+
 ## Project structure
 
 ```

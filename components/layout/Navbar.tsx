@@ -17,7 +17,7 @@ export default function Navbar() {
         {/* ThinkNex brand */}
         <Link href="/" className="brand" aria-label="ThinkNex home">
           <Image
-            src="/images/thinknex-symbol.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/thinknex-symbol.png`}
             alt=""
             width={44}
             height={36}

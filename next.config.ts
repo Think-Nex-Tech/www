@@ -1,12 +1,17 @@
 import type { NextConfig } from "next";
 
+// GitHub Pages serves project sites from /<repo-name>. The deploy workflow sets
+// NEXT_PUBLIC_BASE_PATH (e.g. "/WWW"); leave it unset for local dev or a custom domain.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export", // static HTML export into ./out
+  basePath,
+  trailingSlash: true,
+  images: { unoptimized: true }, // image optimization needs a server
   experimental: {
     agentFeedback: true,
   },
-  cacheComponents: true,
-  partialPrefetching: true,
   turbopack: {
     rules: {
       "*.css": {

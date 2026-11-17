@@ -9,7 +9,7 @@ export default function Footer() {
         <div>
           <Link href="/" className="brand footer-brand">
            <Image
-             src="/images/thinknex-symbol.png"
+             src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/thinknex-symbol.png`}
              alt="ThinkNex symbol"
              width={48}
              height={39}
